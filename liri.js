@@ -50,22 +50,22 @@
 
     // Use Switch to convert value input
     switch (userCommand) {
-        case 'concert-this': // user input of 'concert-this' function
+        case " ": // user input of 'concert-this' function
             appSearchParameters(); // process user input and run search or run defaults
             findConcert(userInput); // run findConcert function
             break;
 
-        case 'spotify-this-song': // user input of 'spotify-this-song' function
+        case "spotify-this-song": // user input of 'spotify-this-song' function
             appSearchParameters(); // process user input and run search or run defaults
             findSong(userInput); // run findSong function
             break;
 
-        case 'movie-this': // user input of 'movie-this' function
+        case "movie-this": // user input of 'movie-this' function
             appSearchParameters(); // process user input and run search or run defaults
             findMovie(userInput); // run findMovie function
             break;
 
-        case 'do-what-it-says': // user input of 'do-what-it-says' function
+        case "do-what-it-says": // user input of 'do-what-it-says' function
             doTheThing(userInput); // run doTheThing function
             break;
 
@@ -97,12 +97,12 @@
 
         // default 'spotify-this-song' search; otherwise, run user input
         if (userCommand === "spotify-this-song" && userNodeInput.length <= 3) {
-            userInput = "The+Sign+Ace+of+Base"
+            userInput = "Beat+it"
         }
 
         // default 'movie-this' search; otherwise, run user input
         if (userCommand === "movie-this" && userNodeInput.length <= 3) {
-            queryUrl = "http://www.omdbapi.com/?t=mr+nobody&y=&plot=short&apikey=trilogy"
+            queryUrl = "http://www.omdbapi.com/?t=the+matrix&y=&plot=short&apikey=trilogy"
         } else {
             queryUrl = "http://www.omdbapi.com/?t=" + userInput + "&y=&plot=short&apikey=trilogy";
         }
@@ -176,7 +176,7 @@
             var movieData = JSON.parse(body);
 
             if (!error && response.statusCode === 200) {
-                console.log("--------------Movie--------------" + "\n" + "Title: " + movieData.Title + "\n" + "Release Year: " + movieData.Year + "\n" + "IMDB Rating: " + movieData.Ratings[0].Value + "\n" + "Rotten Tomatoes: " + movieData.Ratings[1].Value + "\n" + "Country of production: " + movieData.Country + "\n" + "Language: " + movieData.Language + "\n" + "Plot: " + movieData.Plot + "\n" + "Actors: " + movieData.Actors + "\n");
+                console.log("--------------Movie--------------" + "\n" + "Title: " + movieData.Title + "\n" + "Release Year: " + movieData.Year + "\n" + "IMDB Rating: " + movieData.Ratings[0].Value + "\n"+ "Country of production: " + movieData.Country + "\n" + "Language: " + movieData.Language + "\n" + "Plot: " + movieData.Plot + "\n" + "Actors: " + movieData.Actors + "\n");
             }
 
         }) // end of request
