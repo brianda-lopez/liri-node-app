@@ -97,7 +97,7 @@
 
         // default 'spotify-this-song' search; otherwise, run user input
         if (userCommand === "spotify-this-song" && userNodeInput.length <= 3) {
-            userInput = "Beat+it"
+            userInput = process.argv.slice(3).join(" ");
         }
 
         // default 'movie-this' search; otherwise, run user input
